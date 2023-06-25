@@ -1,0 +1,222 @@
+
+
+*{
+    margin: 0px;
+    border: 0px;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: cadetblue;
+}
+
+:root {
+    --main-wheat-color: wheat;
+    --main-dark-color: rgb(58, 24, 5);
+    --second-dark-color: rgb(110, 52, 18);
+    --white-color: white;
+    --gold-color: rgb(156, 136, 21);
+  }
+
+.header{
+    background-color: var(--main-dark-color);
+    color: var(--main-wheat-color);
+    padding: 20px;
+}
+
+.mainContent{
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.mainContent .mainTittle{
+    text-transform: capitalize;
+    letter-spacing: 5px;
+    font-size: 2rem;
+}
+
+.menuEntity{
+    font-size: 3rem;
+}
+
+/* inicio animation */
+.menuEntity {
+    animation-duration: 1s;
+    animation-name: slidein;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+  
+  @keyframes slidein {
+    from {
+      transform: translateY(4px);
+      color: yellow
+      
+    }
+  
+    to {
+        transform: translateY(0px);
+        color: var(--gold-color);
+      
+    }
+  }
+
+/* fin animation */
+
+
+
+.mainContent .nav{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    width: 90%;
+}
+
+.links{
+    text-decoration: none;
+    border: 1px solid var(--main-wheat-color);
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    color: var(--white-color);
+    background-color: var(--main-dark-color);
+    cursor: pointer;
+    
+}
+
+
+
+.links:hover, .linkActive{
+    background-color: var(--main-wheat-color);
+    color: var(--main-dark-color);
+    
+}
+
+.mainContent .results{
+    margin-top: 50px;
+    width: 100%;
+    border-radius: 5px;
+    
+}
+
+/* Cards Styles *********************** */
+
+.results{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    max-width: 90%;
+    gap: 5px;
+
+}
+
+.card{
+    margin: 10px;
+    background-color: var(--gold-color);
+    color: var(--white-color);
+    padding: 15px;
+    font-size: 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.card .imagecard{
+    width: 100%;
+    border-radius: inherit;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.card .cardInfo{
+    background-color: black;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    flex-grow: 1;
+}
+
+hr{
+    border: 1px solid var(--main-wheat-color);
+    margin: 15px auto;
+    width: 80%;
+    text-align: center;
+}
+
+.hrTitle{
+    width: 40%;
+}
+
+.valor{
+    color: gold;
+}
+
+
+/* Media Querys ******************/
+
+
+@media only screen and (min-width: 600px){
+
+        .links{
+            font-size: 1.5rem;
+        }
+
+        .card{
+            width: 500px;
+            flex-direction: row;
+        }
+
+        .card .imagecard{
+            width: 50%;
+            
+        }
+        .card .cardInfo{
+            background-color: black;
+            padding: 20px;
+            width: 50%;
+            text-align: center;
+        }
+
+        .mainContent .nav{
+            width: 40%;
+        }
+}
+
+
+
+@media only screen and (min-width: 1024px)  {
+    .links{
+        padding: 5px 20px;
+        font-size: 1.5rem;
+    }
+
+    .results{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card{
+        width: 350px;
+        flex-direction: row;
+    }
+
+    .card .cardInfo{
+        padding: 5px;
+    }
+
+    .mainContent .nav{
+        width: 50%;
+    }
+
+}
